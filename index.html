@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quảng Vị - Hương Vị Miền Trung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=1.1">
+</head>
+<body>
+
+    <!-- Popup Thông báo -->
+    <div id="notificationPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <img src="ảnh/thongbao.jpg" alt="Thông báo" class="popup-img">
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="logo">Quảng Vị</div>
+        <nav>
+            <ul class="nav-links">
+                <li><button class="tab-link active" onclick="openTab(event, 'TrangChu')" data-i18n="nav_home">Trang chủ</button></li>
+                <li><button class="tab-link" onclick="openTab(event, 'ThucDon')" data-i18n="nav_menu">Thực đơn</button></li>
+                <li><button class="tab-link" onclick="openTab(event, 'DanhGia')" data-i18n="nav_reviews">Đánh giá</button></li>
+                <li><button class="tab-link" onclick="openTab(event, 'LienHe')" data-i18n="nav_contact">Liên hệ</button></li>
+            </ul>
+        </nav>
+        <div class="lang-switcher">
+            <button onclick="setLanguage('vi')" class="lang-btn active" id="btn-vi">VN</button>
+            <span class="lang-divider">|</span>
+            <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">EN</button>
+        </div>
+    </header>
+
+    <!-- Top Site Banner -->
+    <section class="hero-banner">
+        <img src="ảnh/banner.jpg" alt="Quán ăn Quảng Vị Banner" class="banner-img">
+        <div class="hero-overlay">
+            <h1 data-i18n="hero_title">Tinh Hoa Ẩm Thực Miền Trung</h1>
+            <p data-i18n="hero_subtitle">Hương vị truyền thống, đậm đà khó quên</p>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="content-container">
+        
+        <!-- Tab: Trang chủ -->
+        <div id="TrangChu" class="tab-content active">
+            <section class="intro-section">
+                <h2 data-i18n="intro_title">Khám Phá Ẩm Thực Miền Trung</h2>
+                <p data-i18n="intro_content">Ẩm thực miền Trung Việt Nam nổi tiếng với sự tinh tế, đậm đà và cay nồng. Từ những tô Mì Quảng vàng ươm thơm lừng, bún mắm nêm đậm vị, cho đến đĩa cơm gà béo ngậy, mỗi món ăn tại <strong>Quảng Vị</strong> đều được chuẩn bị tỉ mỉ, chắt lọc tinh hoa từ nguyên liệu tươi ngon nhất để mang đến cho thực khách trải nghiệm chân thực và khó quên.</p>
+            </section>
+            
+            <section class="gallery-section">
+                <h3 data-i18n="gallery_title">Các Món Ăn Đặc Trưng</h3>
+                <div class="food-gallery">
+                    <div class="food-card">
+                        <img src="ảnh/myquang.jpg" alt="Mì Quảng">
+                        <h4 data-i18n="food_myquang">Mì Quảng Đặc Biệt</h4>
+                    </div>
+                    <div class="food-card">
+                        <img src="ảnh/myquang1.jpg" alt="Mì Quảng Tôm Thịt">
+                        <h4 data-i18n="food_myquang1">Mì Quảng Tôm Thịt</h4>
+                    </div>
+                    <div class="food-card">
+                        <img src="ảnh/bunmoc.png" alt="Bún Mọc">
+                        <h4 data-i18n="food_bunmoc">Bún Mọc Thanh Ngọt</h4>
+                    </div>
+                    <div class="food-card">
+                        <img src="ảnh/bunmamnem.png" alt="Bún Mắm Nêm">
+                        <h4 data-i18n="food_bunmamnem">Bún Mắm Nêm Đậm Đà</h4>
+                    </div>
+                    <div class="food-card">
+                        <img src="ảnh/comga.jpg" alt="Cơm Gà">
+                        <h4 data-i18n="food_comga">Cơm Gà Xứ Quảng</h4>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab: Thực đơn -->
+        <div id="ThucDon" class="tab-content">
+            <section class="menu-section">
+                <h2 data-i18n="menu_title">Thực Đơn Của Chúng Tôi</h2>
+                <div class="pdf-container">
+                    <embed src="pdf/Brown and Cream Modern Elegant Restaurant Menu.pdf.pdf" type="application/pdf" width="100%" height="800px" />
+                    <!-- Fallback if PDF fails to load in some browsers -->
+                    <p class="pdf-fallback">
+                        <span data-i18n="menu_fallback_prefix">Nếu bạn không thể xem thực đơn, vui lòng </span>
+                        <a href="pdf/Brown and Cream Modern Elegant Restaurant Menu.pdf.pdf" target="_blank" data-i18n="menu_fallback_link">nhấn vào đây để tải về</a>.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab: Đánh giá -->
+        <div id="DanhGia" class="tab-content">
+            <section class="reviews-section">
+                <h2 data-i18n="reviews_title">Khách Hàng Nói Gì Về Quảng Vị</h2>
+                <div class="elfsight-widget-container" style="margin-top: 30px; background: var(--white); padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                    <script src="https://elfsightcdn.com/platform.js" async></script>
+                    <div class="elfsight-app-764646f3-17eb-4ae4-9eef-e9e33b6159dd" data-elfsight-app-lazy></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab: Liên hệ -->
+        <div id="LienHe" class="tab-content">
+            <section class="contact-section">
+                <h2 data-i18n="contact_title">Liên Hệ Với Quảng Vị</h2>
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <h3 data-i18n="contact_info_title">Thông Tin Quán</h3>
+                        <p><strong data-i18n="contact_address_label">Địa chỉ:</strong> 123 Đường Ẩm Thực, Quận 1, TP. Hồ Chí Minh</p>
+                        <p><strong data-i18n="contact_phone_label">Điện thoại:</strong> 0909 123 456</p>
+                        <p><strong data-i18n="contact_hours_label">Giờ mở cửa:</strong> <span data-i18n="contact_hours_value">06:00 - 22:00 hằng ngày</span></p>
+                        <p><strong data-i18n="contact_email_label">Email:</strong> lienhe@quangvi.vn</p>
+                    </div>
+                    <div class="contact-form">
+                        <h3 data-i18n="contact_form_title">Gửi Tin Nhắn</h3>
+                        <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã liên hệ!');">
+                            <input type="text" placeholder="Tên của bạn" data-i18n-placeholder="contact_name_placeholder" required>
+                            <input type="email" placeholder="Email của bạn" data-i18n-placeholder="contact_email_placeholder" required>
+                            <textarea rows="4" placeholder="Tin nhắn" data-i18n-placeholder="contact_message_placeholder" required></textarea>
+                            <button type="submit" class="submit-btn" data-i18n="contact_submit">Gửi Liên Hệ</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="map-container" style="margin-top: 30px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.8846287534143!2d106.73094647458369!3d10.743374289403391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317525003fead4df%3A0xb5a352929c619e38!2zUXXhuqNuZyBW4buL!5e0!3m2!1svi!2s!4v1778648309345!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <p data-i18n="footer_copy">&copy; 2026 Quảng Vị. Tất cả các quyền được bảo lưu.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
