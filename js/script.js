@@ -151,3 +151,16 @@ window.onclick = function(event) {
         closePopup();
     }
 }
+
+// Mobile Menu Logic
+function toggleMenu() {
+    var navMenu = document.getElementById("navMenu");
+    navMenu.classList.toggle("show");
+}
+
+function closeMenu() {
+    var navMenu = document.getElementById("navMenu");
+    if (navMenu.classList.contains("show")) {
+        navMenu.classList.remove("show");
+    }
+}

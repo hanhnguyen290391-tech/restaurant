@@ -19,20 +19,23 @@
 
     <!-- Header & Navigation -->
     <header class="navbar">
-        <div class="logo">Quảng Vị</div>
-        <nav>
-            <ul class="nav-links">
-                <li><button class="tab-link active" onclick="openTab(event, 'TrangChu')" data-i18n="nav_home">Trang chủ</button></li>
-                <li><button class="tab-link" onclick="openTab(event, 'ThucDon')" data-i18n="nav_menu">Thực đơn</button></li>
-                <li><button class="tab-link" onclick="openTab(event, 'DanhGia')" data-i18n="nav_reviews">Đánh giá</button></li>
-                <li><button class="tab-link" onclick="openTab(event, 'LienHe')" data-i18n="nav_contact">Liên hệ</button></li>
-            </ul>
-        </nav>
-        <div class="lang-switcher">
-            <button onclick="setLanguage('vi')" class="lang-btn active" id="btn-vi">VN</button>
-            <span class="lang-divider">|</span>
-            <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">EN</button>
+        <div class="navbar-header">
+            <div class="logo">Quảng Vị</div>
+            <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">&#9776;</button>
         </div>
+        <nav id="navMenu" class="nav-menu">
+            <ul class="nav-links">
+                <li><button class="tab-link active" onclick="openTab(event, 'TrangChu'); closeMenu()" data-i18n="nav_home">Trang chủ</button></li>
+                <li><button class="tab-link" onclick="openTab(event, 'ThucDon'); closeMenu()" data-i18n="nav_menu">Thực đơn</button></li>
+                <li><button class="tab-link" onclick="openTab(event, 'DanhGia'); closeMenu()" data-i18n="nav_reviews">Đánh giá</button></li>
+                <li><button class="tab-link" onclick="openTab(event, 'LienHe'); closeMenu()" data-i18n="nav_contact">Liên hệ</button></li>
+            </ul>
+            <div class="lang-switcher">
+                <button onclick="setLanguage('vi')" class="lang-btn active" id="btn-vi">VN</button>
+                <span class="lang-divider">|</span>
+                <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">EN</button>
+            </div>
+        </nav>
     </header>
 
     <!-- Top Site Banner -->
